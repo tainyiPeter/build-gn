@@ -9,9 +9,9 @@ const fs    = require('fs')
 const path  = require('path')
 
 const sha1 = {
-  linux64: '4e5f9299c4ae4d80dcd87b4ade0bbada23ccf866',
-  mac: 'fbba40a0900ae685f5822d03d160a413d549e056',
-  win: 'c0d03f78af494365ff38c663297a20fe61da29ea',
+  linux64: '3523d50538357829725d4ed74b777a572ce0ac74',
+  mac: 'd43122f6140d0711518aa909980cb009c4fbce3d',
+  win: 'e20768d93a6b4400de0d03bb8ceb46facdbe3883',
 }
 
 const platform = {

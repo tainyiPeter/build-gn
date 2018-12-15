@@ -3,7 +3,7 @@
 # found in the LICENSE file.
 
 # Exclude support for registering main function in multi-process tests.
-gtest_include_multiprocess = false
+gtest_include_multiprocess = true
 
 # Exclude support for platform-specific operations across unit tests.
 gtest_include_platform_test = false

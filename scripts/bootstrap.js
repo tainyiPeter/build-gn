@@ -7,6 +7,7 @@
 const {targetCpu, targetOs, execSync, spawnSync} = require('./common')
 
 // Get the arch of sysroot.
+// TODO(zcbenz): Support more arch.
 let sysrootArch = {
   x64: 'amd64',
   x86: 'i386',
@@ -17,7 +18,6 @@ if (process.platform === 'linux') {
   execSync('python tools/clang/scripts/update.py')
 }
 if (process.platform === 'linux') {
-  // TODO(zcbenz): Support more arch.
   execSync(`python build/linux/sysroot_scripts/install-sysroot.py --arch ${sysrootArch}`)
   execSync('node scripts/update_gold.js')
 }
@@ -47,9 +47,6 @@ if (targetOs == 'linux') {
   debugConfig.push('enable_iterator_debugging=false')
   // Use prebuilt clang binaries.
   commonConfig.push('is_clang=true')
-  // Link with libc++ statically.
-  commonConfig.push('use_custom_libcxx=true')
-  releaseConfig.push('libcpp_is_static=true')
 }
 
 gen('out/Debug', debugConfig)
